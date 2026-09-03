@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Contact Yash Enterprises in Bhadohi.">
+
+    <title>Contact Us | Yash Enterprises</title>
+
+
+    <style>
+
+        /* =========================
+           BASIC
+        ========================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f6f8fc;
+            color: #182230;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+
+        /* =========================
+           COLORS
+        ========================= */
+
+        :root {
+            --blue: #123d8c;
+            --dark-blue: #092b68;
+            --red: #e3262e;
+            --light-blue: #edf3ff;
+            --dark: #172033;
+            --gray: #687386;
+            --white: #ffffff;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            background: rgba(255,255,255,0.98);
+
+            border-bottom: 1px solid #e5e8ed;
+
+            z-index: 1000;
+        }
+
+        .navbar {
+            max-width: 1200px;
+
+            height: 75px;
+
+            margin: auto;
+
+            padding: 0 20px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            color: var(--blue);
+        }
+
+        .logo-symbol {
+            width: 45px;
+            height: 45px;
+
+            background: var(--red);
+
+            color: white;
+
+            border-radius: 10px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 25px;
+
+            font-weight: 900;
+
+            box-shadow:
+                0 5px 15px
+                rgba(227,38,46,0.22);
+        }
+
+        .logo-name {
+            font-size: 20px;
+
+            font-weight: 900;
+
+            line-height: 1.1;
+        }
+
+        .logo-subtitle {
+            font-size: 9px;
+
+            color: #7b8594;
+
+            letter-spacing: 1px;
+
+            font-weight: bold;
+
+            margin-top: 3px;
+        }
+
+
+        /* =========================
+           DESKTOP NAVIGATION
+        ========================= */
+
+        .menu {
+            display: flex;
+
+            align-items: center;
+
+            gap: 28px;
+        }
+
+        .menu a {
+            color: #273140;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: 0.2s;
+        }
+
+        .menu a:hover {
+            color: var(--red);
+        }
+
+        .menu .active {
+            color: var(--red);
+        }
+
+        .menu .contact-link {
+            background: var(--blue);
+
+            color: white;
+
+            padding: 11px 18px;
+
+            border-radius: 7px;
+        }
+
+        .menu .contact-link:hover {
+            background: var(--red);
+
+            color: white;
+        }
+
+
+        /* =========================
+           MOBILE BUTTON
+        ========================= */
+
+        .mobile-button {
+            display: none;
+
+            width: 43px;
+            height: 43px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            background: var(--blue);
+
+            color: white;
+
+            font-size: 21px;
+
+            cursor: pointer;
+        }
+
+        .mobile-menu {
+            display: none;
+
+            background: white;
+
+            border-top: 1px solid #e5e8ed;
+
+            padding: 8px 18px 15px;
+        }
+
+        .mobile-menu.show {
+            display: block;
+        }
+
+        .mobile-menu a {
+            display: block;
+
+            padding: 14px 8px;
+
+            border-bottom: 1px solid #eeeeee;
+
+            color: var(--blue);
+
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+
+        /* =========================
+           LANGUAGE BUTTON
+        ========================= */
+
+        .language-button {
+            position: fixed;
+
+            right: 20px;
+            bottom: 20px;
+
+            z-index: 3000;
+
+            min-width: 125px;
+
+            padding: 13px 18px;
+
+            border: 3px solid white;
+
+            border-radius: 35px;
+
+            background: var(--red);
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: 900;
+
+            cursor: pointer;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 8px;
+
+            box-shadow:
+                0 7px 25px
+                rgba(0,0,0,0.25);
+
+            transition: 0.2s;
+        }
+
+        .language-button:hover {
+            transform: scale(1.05);
+        }
+
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            min-height: calc(100vh - 145px);
+
+            padding:
+                145px
+                20px
+                80px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        /* =========================
+           CONTACT CONTAINER
+        ========================= */
+
+        .contact-container {
+            width: 100%;
+
+            max-width: 1050px;
+
+            margin: auto;
+        }
+
+
+        /* =========================
+           HEADING
+        ========================= */
+
+        .heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin:
+                0
+                auto
+                45px;
+        }
+
+        .heading small {
+            display: inline-block;
+
+            color: var(--red);
+
+            font-size: 11px;
+
+            font-weight: 900;
+
+            letter-spacing: 1.5px;
+
+            margin-bottom: 10px;
+        }
+
+        .heading h1 {
+            color: var(--blue);
+
+            font-size:
+                clamp(38px, 6vw, 55px);
+
+            line-height: 1.05;
+
+            margin-bottom: 15px;
+        }
+
+        .heading p {
+            color: var(--gray);
+
+            font-size: 15px;
+
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           CONTACT CARDS
+        ========================= */
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+
+            border: 1px solid #e3e7ee;
+
+            border-radius: 16px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            transition: 0.25s;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0,0,0,0.035);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-6px);
+
+            box-shadow:
+                0 15px 35px
+                rgba(18,61,140,0.10);
+
+            border-color:
+                #d3dcf0;
+        }
+
+
+        /* =========================
+           ICON
+        ========================= */
+
+        .contact-icon {
+            width: 65px;
+            height: 65px;
+
+            margin:
+                0
+                auto
+                20px;
+
+            border-radius: 15px;
+
+            background: var(--light-blue);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 29px;
+        }
+
+
+        /* =========================
+           CARD TEXT
+        ========================= */
+
+        .contact-card h2 {
+            color: var(--blue);
+
+            font-size: 19px;
+
+            margin-bottom: 10px;
+        }
+
+        .contact-card p {
+            color: var(--gray);
+
+            font-size: 13px;
+
+            line-height: 1.7;
+        }
+
+        .phone-number {
+            display: inline-block;
+
+            color: var(--red);
+
+            font-size: 20px;
+
+            font-weight: 900;
+
+            margin-top: 4px;
+        }
+
+
+        /* =========================
+           CALL BUTTON
+        ========================= */
+
+        .call-button {
+            display: inline-block;
+
+            margin-top: 15px;
+
+            padding: 10px 17px;
+
+            border-radius: 7px;
+
+            background: var(--blue);
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 900;
+
+            transition: 0.2s;
+        }
+
+        .call-button:hover {
+            background: var(--red);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            background: #071f4c;
+
+            color: white;
+
+            padding: 28px 20px 18px;
+        }
+
+        .footer-container {
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 25px;
+        }
+
+        .footer-name {
+            font-size: 19px;
+
+            font-weight: 900;
+
+            margin-bottom: 5px;
+        }
+
+        .footer-description {
+            color: #94a7c7;
+
+            font-size: 10px;
+        }
+
+        .owner {
+            text-align: right;
+
+            color: #94a7c7;
+
+            font-size: 10px;
+        }
+
+        .owner strong {
+            display: block;
+
+            color: white;
+
+            font-size: 13px;
+
+            margin-top: 3px;
+        }
+
+        .copyright {
+            max-width: 1100px;
+
+            margin:
+                18px
+                auto
+                0;
+
+            padding-top: 15px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,0.1);
+
+            color: #7187aa;
+
+            font-size: 9px;
+
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+
+        /* =========================
+           TABLET
+        ========================= */
+
+        @media (max-width: 850px) {
+
+            .menu {
+                gap: 15px;
+            }
+
+            .contact-grid {
+                grid-template-columns:
+                    1fr;
+            }
+
+            .contact-card {
+                max-width: 500px;
+
+                width: 100%;
+
+                margin: auto;
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 700px) {
+
+            .navbar {
+                height: 68px;
+
+                padding:
+                    0
+                    15px;
+            }
+
+            .menu {
+                display: none;
+            }
+
+            .mobile-button {
+                display: block;
+            }
+
+
+            /* MAIN */
+
+            main {
+                padding:
+                    115px
+                    16px
+                    60px;
+
+                min-height: auto;
+            }
+
+
+            /* HEADING */
+
+            .heading {
+                margin-bottom: 30px;
+            }
+
+            .heading h1 {
+                font-size: 40px;
+            }
+
+            .heading p {
+                font-size: 14px;
+            }
+
+
+            /* CARDS */
+
+            .contact-grid {
+                gap: 15px;
+            }
+
+            .contact-card {
+                padding: 28px 20px;
+            }
+
+
+            /* FOOTER */
+
+            .footer-container {
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .owner {
+                text-align: left;
+            }
+
+            .copyright {
+                flex-direction: column;
+
+                gap: 7px;
+            }
+
+
+            /* LANGUAGE */
+
+            .language-button {
+                right: 13px;
+
+                bottom: 13px;
+
+                min-width: 120px;
+
+                padding:
+                    12px
+                    15px;
+            }
+
+        }
+
+
+        /* =========================
+           SMALL PHONES
+        ========================= */
+
+        @media (max-width: 380px) {
+
+            .logo-name {
+                font-size: 17px;
+            }
+
+            .logo-subtitle {
+                font-size: 7px;
+            }
+
+            .logo-symbol {
+                width: 39px;
+                height: 39px;
+            }
+
+            .heading h1 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     HEADER
+================================= -->
+
+<header>
+
+    <div class="navbar">
+
+
+        <!-- LOGO -->
+
+        <a href="index.html"
+           class="logo">
+
+            <div class="logo-symbol">
+                Y
+            </div>
+
+            <div>
+
+                <div class="logo-name">
+                    Yash Enterprises
+                </div>
+
+                <div class="logo-subtitle">
+                    FMCG • SUPPLY • DISTRIBUTION
+                </div>
+
+            </div>
+
+        </a>
+
+
+        <!-- DESKTOP NAV -->
+
+        <nav class="menu">
+
+            <a href="index.html"
+               data-en="Home"
+               data-hi="होम">
+                Home
+            </a>
+
+            <a href="products.html"
+               data-en="Products"
+               data-hi="उत्पाद">
+                Products
+            </a>
+
+            <a href="contact.html"
+               class="contact-link active"
+               data-en="Contact Us"
+               data-hi="संपर्क करें">
+                Contact Us
+            </a>
+
+        </nav>
+
+
+        <!-- MOBILE BUTTON -->
+
+        <button
+            class="mobile-button"
+            id="mobileButton">
+
+            ☰
+
+        </button>
+
+    </div>
+
+
+    <!-- MOBILE NAV -->
+
+    <div
+        class="mobile-menu"
+        id="mobileMenu">
+
+        <a href="index.html"
+           data-en="Home"
+           data-hi="होम">
+            Home
+        </a>
+
+        <a href="products.html"
+           data-en="Products"
+           data-hi="उत्पाद">
+            Products
+        </a>
+
+        <a href="contact.html"
+           data-en="Contact Us"
+           data-hi="संपर्क करें">
+            Contact Us
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =================================
+     LANGUAGE SWITCH
+================================= -->
+
+<button
+    class="language-button"
+    id="languageButton">
+
+    🌐
+
+    <span id="languageText">
+        हिन्दी
+    </span>
+
+</button>
+
+
+
+<!-- =================================
+     MAIN
+================================= -->
+
+<main>
+
+    <div class="contact-container">
+
+
+        <!-- HEADING -->
+
+        <div class="heading">
+
+            <small
+                data-en="GET IN TOUCH"
+                data-hi="संपर्क करें">
+
+                GET IN TOUCH
+
+            </small>
+
+            <h1
+                data-en="Contact Us"
+                data-hi="संपर्क करें">
+
+                Contact Us
+
+            </h1>
+
+            <p
+                data-en="For enquiries and business-related communication, you can reach Yash Enterprises using the details below."
+                data-hi="पूछताछ और व्यापार से संबंधित जानकारी के लिए नीचे दिए गए विवरण के माध्यम से यश एंटरप्राइजेज से संपर्क करें।">
+
+                For enquiries and business-related
+                communication, you can reach Yash Enterprises
+                using the details below.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- CONTACT CARDS -->
+
+        <div class="contact-grid">
+
+
+            <!-- PHONE -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📞
+                </div>
+
+                <h2
+                    data-en="Phone"
+                    data-hi="फोन">
+
+                    Phone
+
+                </h2>
+
+                <p>
+
+                    <a
+                        href="tel:7398431010"
+                        class="phone-number">
+
+                        7398431010
+
+                    </a>
+
+                </p>
+
+                <a
+                    href="tel:7398431010"
+                    class="call-button"
+                    data-en="Call Now"
+                    data-hi="अभी कॉल करें">
+
+                    Call Now
+
+                </a>
+
+            </div>
+
+
+
+            <!-- LOCATION -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    📍
+                </div>
+
+                <h2
+                    data-en="Location"
+                    data-hi="स्थान">
+
+                    Location
+
+                </h2>
+
+                <p
+                    data-en="Bhadohi"
+                    data-hi="भदोही">
+
+                    Bhadohi
+
+                </p>
+
+            </div>
+
+
+
+            <!-- HOURS -->
+
+            <div class="contact-card">
+
+                <div class="contact-icon">
+                    🕐
+                </div>
+
+                <h2
+                    data-en="Business Hours"
+                    data-hi="व्यवसाय का समय">
+
+                    Business Hours
+
+                </h2>
+
+                <p
+                    data-en="8:00 AM – 8:00 PM"
+                    data-hi="सुबह 8:00 बजे – रात 8:00 बजे">
+
+                    8:00 AM – 8:00 PM
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+
+        <div>
+
+            <div class="footer-name">
+                Yash Enterprises
+            </div>
+
+            <div
+                class="footer-description"
+                data-en="FMCG • SUPPLY • AGENCY • STORAGE"
+                data-hi="एफएमसीजी • सप्लाई • एजेंसी • स्टोरेज">
+
+                FMCG • SUPPLY • AGENCY • STORAGE
+
+            </div>
+
+        </div>
+
+
+        <div class="owner">
+
+            <span
+                data-en="Owner"
+                data-hi="मालिक">
+
+                Owner
+
+            </span>
+
+            <strong>
+                Ashish Maurya
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        <span>
+            © 2026 Yash Enterprises
+        </span>
+
+        <span
+            data-en="All Rights Reserved."
+            data-hi="सर्वाधिकार सुरक्षित।">
+
+            All Rights Reserved.
+
+        </span>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =================================
+     JAVASCRIPT
+================================= -->
+
+<script>
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    const mobileButton =
+        document.getElementById(
+            "mobileButton"
+        );
+
+    const mobileMenu =
+        document.getElementById(
+            "mobileMenu"
+        );
+
+
+    mobileButton.addEventListener(
+        "click",
+        function () {
+
+            mobileMenu.classList.toggle(
+                "show"
+            );
+
+
+            if (
+                mobileMenu.classList.contains(
+                    "show"
+                )
+            ) {
+
+                mobileButton.textContent = "✕";
+
+            } else {
+
+                mobileButton.textContent = "☰";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       LANGUAGE
+    ========================= */
+
+    let language =
+        localStorage.getItem(
+            "yashLanguage"
+        ) || "en";
+
+
+    function updateLanguage() {
+
+        document
+            .querySelectorAll("[data-en]")
+            .forEach(
+                function(element) {
+
+                    const text =
+                        element.getAttribute(
+                            "data-" + language
+                        );
+
+                    if (text) {
+
+                        element.textContent =
+                            text;
+
+                    }
+
+                }
+            );
+
+
+        document.getElementById(
+            "languageText"
+        ).textContent =
+            language === "en"
+                ? "हिन्दी"
+                : "English";
+
+
+        document.documentElement.lang =
+            language;
+
+    }
+
+
+    document.getElementById(
+        "languageButton"
+    ).addEventListener(
+        "click",
+        function() {
+
+            language =
+                language === "en"
+                    ? "hi"
+                    : "en";
+
+
+            localStorage.setItem(
+                "yashLanguage",
+                language
+            );
+
+
+            updateLanguage();
+
+        }
+    );
+
+
+    /* =========================
+       START
+    ========================= */
+
+    updateLanguage();
+
+
+</script>
+
+
+</body>
+
+</html>
