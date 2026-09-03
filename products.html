@@ -1,1362 +1,1379 @@
 
-<!DOCTYPE html> 
- 
-<html lang="en"> 
- 
-<head> 
-<meta charset="UTF-8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
- 
-<meta name="description" 
-content="Yash Enterprises - Products supplied including Campa beverages, Lahori Zeera, Independence, Bro Bond and groceries."> 
- 
-<title>Products | Yash Enterprises</title> 
- 
-<style> 
- 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-} 
- 
-:root { 
-    --blue: #123d8c; 
-    --dark-blue: #092b68; 
-    --red: #e3262e; 
-    --light-blue: #edf3ff; 
-    --dark: #172033; 
-    --gray: #687386; 
-    --white: #ffffff; 
-} 
- 
-html { 
-    scroll-behavior: smooth; 
-} 
- 
-body { 
-    font-family: Arial, Helvetica, sans-serif; 
-    background: #f7f9fc; 
-    color: var(--dark); 
-    overflow-x: hidden; 
-} 
- 
-a { 
-    text-decoration: none; 
-} 
- 
-header { 
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    background: rgba(255,255,255,0.97); 
-    border-bottom: 1px solid #e6e9ef; 
-    z-index: 1000; 
-} 
- 
-.navbar { 
-    max-width: 1200px; 
-    height: 75px; 
-    margin: auto; 
-    padding: 0 20px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-} 
- 
-.logo { 
-    display: flex; 
-    align-items: center; 
-    gap: 10px; 
-    color: var(--blue); 
-} 
- 
-.logo-symbol { 
-    width: 45px; 
-    height: 45px; 
-    background: var(--red); 
-    color: white; 
-    border-radius: 10px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    font-size: 25px; 
-    font-weight: 900; 
-    box-shadow: 0 5px 15px rgba(227,38,46,0.25); 
-} 
- 
-.logo-name { 
-    font-size: 20px; 
-    font-weight: 900; 
-    line-height: 1.1; 
-} 
- 
-.logo-subtitle { 
-    font-size: 9px; 
-    color: #7b8594; 
-    letter-spacing: 1px; 
-    font-weight: bold; 
-    margin-top: 3px; 
-} 
- 
-.menu { 
-    display: flex; 
-    align-items: center; 
-    gap: 28px; 
-} 
- 
-.menu a { 
-    color: #273140; 
-    font-size: 14px; 
-    font-weight: 700; 
-    transition: 0.2s; 
-} 
- 
-.menu a:hover { 
-    color: var(--red); 
-} 
- 
-.menu .products-link { 
-    color: var(--red); 
-} 
- 
-.menu .contact-link { 
-    color: white; 
-    background: var(--blue); 
-    padding: 11px 18px; 
-    border-radius: 7px; 
-} 
- 
-.menu .contact-link:hover { 
-    background: var(--red); 
-    color: white; 
-} 
- 
-.mobile-button { 
-    display: none; 
-    width: 43px; 
-    height: 43px; 
-    border: none; 
-    border-radius: 8px; 
-    background: var(--blue); 
-    color: white; 
-    font-size: 21px; 
-    cursor: pointer; 
-} 
- 
-.mobile-menu { 
-    display: none; 
-    background: white; 
-    border-top: 1px solid #e6e9ef; 
-    padding: 8px 18px 15px; 
-} 
- 
-.mobile-menu.show { 
-    display: block; 
-} 
- 
-.mobile-menu a { 
-    display: block; 
-    padding: 14px 8px; 
-    border-bottom: 1px solid #eeeeee; 
-    color: var(--blue); 
-    font-weight: bold; 
-    font-size: 14px; 
-} 
- 
-.mobile-menu a.active { 
-    color: var(--red); 
-} 
- 
-.language-button { 
-    position: fixed; 
-    right: 20px; 
-    bottom: 20px; 
-    z-index: 3000; 
-    border: 3px solid white; 
-    background: var(--red); 
-    color: white; 
-    min-width: 125px; 
-    padding: 13px 18px; 
-    border-radius: 35px; 
-    font-size: 15px; 
-    font-weight: 900; 
-    cursor: pointer; 
-    box-shadow: 0 7px 25px rgba(0,0,0,0.25); 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    gap: 8px; 
-    transition: 0.2s; 
-} 
- 
-.language-button:hover { 
-    transform: scale(1.05); 
-} 
- 
-.hero { 
-    padding: 150px 20px 90px; 
-    background: radial-gradient(circle at 85% 20%, #dfe9ff 0, #f7f9fc 35%, #ffffff 70%); 
-    text-align: center; 
-    position: relative; 
-    overflow: hidden; 
-} 
- 
-.hero::before { 
-    content: ""; 
-    position: absolute; 
-    width: 300px; 
-    height: 300px; 
-    border-radius: 50%; 
-    background: #edf2ff; 
-    left: -150px; 
-    top: 100px; 
-} 
- 
-.hero-content { 
-    max-width: 800px; 
-    margin: auto; 
-    position: relative; 
-    z-index: 2; 
-} 
- 
-.badge { 
-    display: inline-block; 
-    background: #ffecef; 
-    color: var(--red); 
-    padding: 8px 14px; 
-    border-radius: 30px; 
-    font-size: 11px; 
-    font-weight: 900; 
-    letter-spacing: .5px; 
-    margin-bottom: 18px; 
-} 
- 
-.hero h1 { 
-    color: var(--blue); 
-    font-size: clamp(40px, 7vw, 65px); 
-    line-height: 1.05; 
-    letter-spacing: -2px; 
-    margin-bottom: 20px; 
-} 
- 
-.hero h1 span { 
-    color: var(--red); 
-} 
- 
-.hero p { 
-    max-width: 650px; 
-    margin: auto; 
-    color: var(--gray); 
-    font-size: 17px; 
-    line-height: 1.8; 
-} 
- 
-.category-bar { 
-    background: white; 
-    border-top: 1px solid #e8ebef; 
-    border-bottom: 1px solid #e8ebef; 
-    padding: 15px 20px; 
-    position: sticky; 
-    top: 75px; 
-    z-index: 500; 
-} 
- 
-.category-inner { 
-    max-width: 1000px; 
-    margin: auto; 
-    display: flex; 
-    justify-content: center; 
-    gap: 10px; 
-    flex-wrap: wrap; 
-} 
- 
-.category-inner a { 
-    color: var(--blue); 
-    background: #f1f5fc; 
-    padding: 9px 15px; 
-    border-radius: 30px; 
-    font-size: 12px; 
-    font-weight: 800; 
-    transition: .2s; 
-} 
- 
-.category-inner a:hover { 
-    background: var(--blue); 
-    color: white; 
-} 
- 
-.products-section { 
-    padding: 80px 20px; 
-} 
- 
-.container { 
-    max-width: 1100px; 
-    margin: auto; 
-} 
- 
-.section-title { 
-    text-align: center; 
-    margin-bottom: 45px; 
-} 
- 
-.section-title small { 
-    color: var(--red); 
-    font-size: 11px; 
-    font-weight: 900; 
-    letter-spacing: 1.5px; 
-} 
- 
-.section-title h2 { 
-    color: var(--blue); 
-    font-size: clamp(30px, 5vw, 42px); 
-    margin: 10px 0; 
-} 
- 
-.section-title p { 
-    color: var(--gray); 
-    line-height: 1.7; 
-} 
- 
-.product-category { 
-    margin-bottom: 70px; 
-} 
- 
-.category-heading { 
-    display: flex; 
-    align-items: center; 
-    gap: 15px; 
-    margin-bottom: 22px; 
-} 
- 
-.category-heading h2 { 
-    color: var(--blue); 
-    font-size: 27px; 
-} 
- 
-.category-line { 
-    height: 2px; 
-    flex: 1; 
-    background: #e2e7ef; 
-} 
- 
-.product-grid { 
-    display: grid; 
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 20px; 
-} 
- 
-.product-card { 
-    background: white; 
-    border: 1px solid #e3e7ed; 
-    border-radius: 16px; 
-    overflow: hidden; 
-    transition: .25s; 
-} 
- 
-.product-card:hover { 
-    transform: translateY(-6px); 
-    box-shadow: 0 15px 35px rgba(0,0,0,0.09); 
-} 
- 
-.product-image { 
-    width: 100%; 
-    height: 210px; 
-    object-fit: cover; 
-    background: #eef3fa; 
-} 
- 
-.product-content { 
-    padding: 19px; 
-} 
- 
-.product-content h3 { 
-    color: var(--blue); 
-    font-size: 19px; 
-    margin-bottom: 7px; 
-} 
- 
-.product-content p { 
-    color: var(--gray); 
-    font-size: 12px; 
-    line-height: 1.6; 
-} 
- 
-.no-image { 
-    height: 150px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    background: linear-gradient(135deg, #edf3ff, #ffffff); 
-    font-size: 50px; 
-} 
- 
-.info-box { 
-    margin-top: 30px; 
-    padding: 25px; 
-    background: var(--light-blue); 
-    border-left: 4px solid var(--blue); 
-    border-radius: 10px; 
-} 
- 
-.info-box strong { 
-    display: block; 
-    color: var(--blue); 
-    font-size: 15px; 
-    margin-bottom: 7px; 
-} 
- 
-.info-box p { 
-    color: var(--gray); 
-    font-size: 13px; 
-    line-height: 1.7; 
-} 
- 
-.cta { 
-    padding: 70px 20px; 
-    background: #f0f3f8; 
-} 
- 
-.cta-box { 
-    max-width: 1050px; 
-    margin: auto; 
-    background: white; 
-    padding: 40px; 
-    border-radius: 18px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    gap: 25px; 
-    box-shadow: 0 12px 40px rgba(0,0,0,0.07); 
-} 
- 
-.cta-box h2 { 
-    color: var(--blue); 
-    font-size: 30px; 
-    margin-bottom: 9px; 
-} 
- 
-.cta-box p { 
-    color: var(--gray); 
-    font-size: 14px; 
-} 
- 
-.primary-button { 
-    display: inline-block; 
-    background: var(--red); 
-    color: white; 
-    padding: 14px 21px; 
-    border-radius: 8px; 
-    font-weight: 900; 
-    font-size: 14px; 
-    transition: .2s; 
-} 
- 
-.primary-button:hover { 
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(227,38,46,0.22); 
-} 
- 
-footer { 
-    background: #071f4c; 
-    color: white; 
-    padding: 35px 20px 20px; 
-} 
- 
-.footer-container { 
-    max-width: 1100px; 
-    margin: auto; 
-    display: flex; 
-    justify-content: space-between; 
-    gap: 30px; 
-    padding-bottom: 25px; 
-    border-bottom: 1px solid rgba(255,255,255,0.1); 
-} 
- 
-.footer-name { 
-    font-size: 20px; 
-    font-weight: 900; 
-    margin-bottom: 7px; 
-} 
- 
-.footer-description { 
-    color: #94a7c7; 
-    font-size: 11px; 
-} 
- 
-.owner { 
-    text-align: right; 
-    color: #94a7c7; 
-    font-size: 11px; 
-} 
- 
-.owner strong { 
-    display: block; 
-    color: white; 
-    font-size: 14px; 
-    margin-top: 4px; 
-} 
- 
-.copyright { 
-    max-width: 1100px; 
-    margin: 18px auto 0; 
-    display: flex; 
-    justify-content: space-between; 
-    color: #7187aa; 
-    font-size: 10px; 
-} 
- 
-@media (max-width: 900px) { 
- 
-    .product-grid { 
-        grid-template-columns: repeat(2, 1fr); 
-    } 
- 
-    .cta-box { 
-        flex-direction: column; 
-        text-align: center; 
-    } 
-} 
- 
-@media (max-width: 700px) { 
- 
-    .navbar { 
-        height: 68px; 
-        padding: 0 15px; 
-    } 
- 
-    .menu { 
-        display: none; 
-    } 
- 
-    .mobile-button { 
-        display: block; 
-    } 
- 
-    .hero { 
-        padding: 120px 16px 65px; 
-    } 
- 
-    .hero h1 { 
-        font-size: 42px; 
-    } 
- 
-    .hero p { 
-        font-size: 15px; 
-    } 
- 
-    .category-bar { 
-        top: 68px; 
-        padding: 12px 10px; 
-    } 
- 
-    .category-inner { 
-        gap: 6px; 
-    } 
- 
-    .category-inner a { 
-        padding: 8px 11px; 
-        font-size: 10px; 
-    } 
- 
-    .products-section { 
-        padding: 65px 16px; 
-    } 
- 
-    .product-grid { 
-        grid-template-columns: 1fr; 
-    } 
- 
-    .category-heading h2 { 
-        font-size: 23px; 
-    } 
- 
-    .product-image { 
-        height: 220px; 
-    } 
- 
-    .cta { 
-        padding: 45px 16px; 
-    } 
- 
-    .cta-box { 
-        padding: 30px 20px; 
-    } 
- 
-    .cta-box h2 { 
-        font-size: 27px; 
-    } 
- 
-    .footer-container { 
-        flex-direction: column; 
-    } 
- 
-    .owner { 
-        text-align: left; 
-    } 
- 
-    .copyright { 
-        flex-direction: column; 
-        gap: 7px; 
-    } 
- 
-    .language-button { 
-        right: 13px; 
-        bottom: 13px; 
-        min-width: 120px; 
-        padding: 12px 15px; 
-    } 
-} 
- 
-@media (max-width: 380px) { 
- 
-    .logo-name { 
-        font-size: 17px; 
-    } 
- 
-    .logo-subtitle { 
-        font-size: 7px; 
-    } 
- 
-    .logo-symbol { 
-        width: 39px; 
-        height: 39px; 
-    } 
- 
-    .hero h1 { 
-        font-size: 37px; 
-    } 
- 
-} 
- 
-</style> 
- 
-</head> 
- 
-<body> 
- 
-<header> 
- 
-<div class="navbar"> 
- 
-<a href="index.html" class="logo"> 
- 
-<div class="logo-symbol"> 
-Y 
-</div> 
- 
-<div> 
- 
-<div class="logo-name"> 
-Yash Enterprises 
-</div> 
- 
-<div class="logo-subtitle"> 
-FMCG • SUPPLY • DISTRIBUTION 
-</div> 
- 
-</div> 
- 
-</a> 
- 
-<nav class="menu"> 
- 
-<a href="index.html" 
-data-en="Home" 
-data-hi="होम"> 
-Home </a> 
- 
-<a href="products.html" 
-class="products-link" 
-data-en="Products" 
-data-hi="उत्पाद"> 
-Products </a> 
- 
-<a href="contact.html" 
-class="contact-link" 
-data-en="Contact Us" 
-data-hi="संपर्क करें"> 
-Contact Us </a> 
- 
-</nav> 
- 
-<button 
-class="mobile-button" 
-id="mobileButton"> 
- 
-☰ 
- 
-</button> 
- 
-</div> 
- 
-<div class="mobile-menu" id="mobileMenu"> 
- 
-<a href="index.html" 
-data-en="Home" 
-data-hi="होम"> 
-Home </a> 
- 
-<a href="products.html" 
-class="active" 
-data-en="Products" 
-data-hi="उत्पाद"> 
-Products </a> 
- 
-<a href="contact.html" 
-data-en="Contact Us" 
-data-hi="संपर्क करें"> 
-Contact Us </a> 
- 
-</div> 
- 
-</header> 
- 
-<button 
-class="language-button" 
-id="languageButton"> 
- 
-🌐 
- 
-<span id="languageText"> 
-हिन्दी 
-</span> 
- 
-</button> 
- 
-<section class="hero"> 
- 
-<div class="hero-content"> 
- 
-<div class="badge" 
-data-en="OUR PRODUCT RANGE" 
-data-hi="हमारे उत्पाद"> 
- 
-OUR PRODUCT RANGE 
- 
-</div> 
- 
-<h1> 
- 
-<span 
-data-en="Products" 
-data-hi="उत्पाद"> 
- 
-Products 
- 
-</span> 
- 
-<span 
-data-en="we supply." 
-data-hi="हम सप्लाई करते हैं।"> 
- 
-we supply. 
- 
-</span> 
- 
-</h1> 
- 
-<p 
-data-en="Explore the beverage and consumer product categories handled by Yash Enterprises." 
-data-hi="यश एंटरप्राइजेज द्वारा संभाली जाने वाली पेय पदार्थ और उपभोक्ता उत्पाद श्रेणियां देखें।"> 
- 
-Explore the beverage and consumer product 
-categories handled by Yash Enterprises. 
- 
-</p> 
- 
-</div> 
- 
-</section> 
- 
-<div class="category-bar"> 
- 
-<div class="category-inner"> 
- 
-<a href="#campa" 
-data-en="Campa" 
-data-hi="कैम्पा"> 
-Campa </a> 
- 
-<a href="#lahori" 
-data-en="Lahori" 
-data-hi="लाहौरी"> 
-Lahori </a> 
- 
-<a href="#independence" 
-data-en="Independence" 
-data-hi="इंडिपेंडेंस"> 
-Independence </a> 
- 
-<a href="#brobond" 
-data-en="Bro Bond" 
-data-hi="ब्रो बॉन्ड"> 
-Bro Bond </a> 
- 
-<a href="#groceries" 
-data-en="Groceries" 
-data-hi="किराना"> 
-Groceries </a> 
- 
-</div> 
- 
-</div> 
- 
-<section class="products-section"> 
- 
-<div class="container"> 
- 
-<div class="section-title"> 
- 
-<small 
-data-en="PRODUCT CATEGORIES" 
-data-hi="उत्पाद श्रेणियां"> 
- 
-PRODUCT CATEGORIES 
- 
-</small> 
- 
-<h2 
-data-en="What we handle" 
-data-hi="हम क्या संभालते हैं"> 
- 
-What we handle 
- 
-</h2> 
- 
-<p 
-data-en="Our current product categories include beverages, selected consumer products and groceries." 
-data-hi="हमारी वर्तमान उत्पाद श्रेणियों में पेय पदार्थ, चुनिंदा उपभोक्ता उत्पाद और किराना शामिल हैं।"> 
- 
-Our current product categories include 
-beverages, selected consumer products and groceries. 
- 
-</p> 
- 
-</div> 
- 
-<div class="product-category" id="campa"> 
- 
-<div class="category-heading"> 
- 
-<h2 
-data-en="Campa Beverages" 
-data-hi="कैम्पा पेय पदार्थ"> 
- 
-Campa Beverages 
- 
-</h2> 
- 
-<div class="category-line"></div> 
- 
-</div> 
- 
-<div class="product-grid"> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="cola.png" 
-alt="Campa Cola"> 
- 
-<div class="product-content"> 
- 
-<h3> 
-Campa Cola 
-</h3> 
- 
-<p 
-data-en="Campa Cola beverage." 
-data-hi="कैम्पा कोला पेय।"> 
- 
-Campa Cola beverage. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="orange.png" 
-alt="Campa Orange"> 
- 
-<div class="product-content"> 
- 
-<h3> 
-Campa Orange 
-</h3> 
- 
-<p 
-data-en="Campa Orange beverage." 
-data-hi="कैम्पा ऑरेंज पेय।"> 
- 
-Campa Orange beverage. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="lemon.png" 
-alt="Campa Lemon"> 
- 
-<div class="product-content"> 
- 
-<h3> 
-Campa Lemon 
-</h3> 
- 
-<p 
-data-en="Campa Lemon beverage." 
-data-hi="कैम्पा लेमन पेय।"> 
- 
-Campa Lemon beverage. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="energy.png" 
-alt="Campa PowerUp"> 
- 
-<div class="product-content"> 
- 
-<h3> 
-Campa Energy 
-</h3> 
- 
-<p 
-data-en="Campa PowerUp beverage." 
-data-hi="कैम्पा Energy पेय।"> 
- 
-Campa Energy beverage. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-<div class="product-category" id="lahori"> 
- 
-<div class="category-heading"> 
- 
-<h2 
-data-en="Lahori" 
-data-hi="लाहौरी"> 
- 
-Lahori 
- 
-</h2> 
- 
-<div class="category-line"></div> 
- 
-</div> 
- 
-<div class="product-grid"> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="lahori.png" 
-alt="Lahori Zeera"> 
- 
-<div class="product-content"> 
- 
-<h3> 
-Lahori Zeera 
-</h3> 
- 
-<p 
-data-en="Lahori Zeera beverage." 
-data-hi="लाहौरी जीरा पेय।"> 
- 
-Lahori Zeera beverage. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-<div class="product-category" id="independence"> 
- 
-<div class="category-heading"> 
- 
-<h2 
-data-en="Independence" 
-data-hi="इंडिपेंडेंस"> 
- 
-Independence 
- 
-</h2> 
- 
-<div class="category-line"></div> 
- 
-</div> 
- 
-<div class="product-grid"> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="independence.png" 
-alt="Independence products"> 
- 
-<div class="product-content"> 
- 
-<h3> 
-Independence 
-</h3> 
- 
-<p 
-data-en="Selected Independence consumer products." 
-data-hi="चुनिंदा इंडिपेंडेंस उपभोक्ता उत्पाद।"> 
- 
-Selected Independence consumer products. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-<div class="product-category" id="brobond"> 
- 
-<div class="category-heading"> 
- 
-<h2 
-data-en="Bro Bond" 
-data-hi="ब्रो बॉन्ड"> 
- 
-Bro Bond 
- 
-</h2> 
- 
-<div class="category-line"></div> 
- 
-</div> 
- 
-<div class="product-grid"> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="Brobond.jpg" 
-alt="Bro Bond drinks"> 
- 
-<div class="product-content"> 
- 
-<h3> 
-Bro Bond Drinks 
-</h3> 
- 
-<p 
-data-en="Bro Bond drinks and beverage products." 
-data-hi="ब्रो बॉन्ड ड्रिंक्स और पेय उत्पाद।"> 
- 
-Bro Bond drinks and beverage products. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-<div class="product-category" id="groceries"> 
- 
-<div class="category-heading"> 
- 
-<h2 
-data-en="Groceries & More" 
-data-hi="किराना और अन्य"> 
- 
-Groceries & More 
- 
-</h2> 
- 
-<div class="category-line"></div> 
- 
-</div> 
- 
-<div class="product-grid"> 
- 
-<div class="product-card"> 
- 
-<img 
-class="product-image" 
-src="grocery.png" 
-alt="Groceries"> 
- 
-<div class="product-content"> 
- 
-<h3 
-data-en="Groceries" 
-data-hi="किराना"> 
- 
-Groceries 
- 
-</h3> 
- 
-<p 
-data-en="Grocery and everyday consumer products." 
-data-hi="किराना और रोज़मर्रा के उपभोक्ता उत्पाद।"> 
- 
-Grocery and everyday consumer products. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-</div> 
- 
-<div class="info-box"> 
- 
-<strong 
-data-en="Looking for a specific product?" 
-data-hi="किसी विशेष उत्पाद की आवश्यकता है?"> 
- 
-Looking for a specific product? 
- 
-</strong> 
- 
-<p 
-data-en="Contact Yash Enterprises to ask about product availability and supply." 
-data-hi="उत्पाद की उपलब्धता और सप्लाई के बारे में जानने के लिए यश एंटरप्राइजेज से संपर्क करें।"> 
- 
-Contact Yash Enterprises to ask about product 
-availability and supply. 
- 
-</p> 
- 
-</div> 
- 
-</div> 
- 
-</section> 
- 
-<section class="cta"> 
- 
-<div class="cta-box"> 
- 
-<div> 
- 
-<h2 
-data-en="Need these products?" 
-data-hi="इन उत्पादों की आवश्यकता है?"> 
- 
-Need these products? 
- 
-</h2> 
- 
-<p 
-data-en="Contact Yash Enterprises for product availability and supply enquiries." 
-data-hi="उत्पाद की उपलब्धता और सप्लाई के लिए यश एंटरप्राइजेज से संपर्क करें।"> 
- 
-Contact Yash Enterprises for product availability 
-and supply enquiries. 
- 
-</p> 
- 
-</div> 
- 
-<a href="contact.html" 
-class="primary-button" 
-data-en="Contact Us →" 
-data-hi="संपर्क करें →"> 
- 
-Contact Us → 
- 
-</a> 
- 
-</div> 
- 
-</section> 
- 
-<footer> 
- 
-<div class="footer-container"> 
- 
-<div> 
- 
-<div class="footer-name"> 
-Yash Enterprises 
-</div> 
- 
-<div class="footer-description" 
-data-en="FMCG Supply • Agency • Storage • Distribution" 
-data-hi="एफएमसीजी सप्लाई • एजेंसी • स्टोरेज • डिस्ट्रीब्यूशन"> 
- 
-FMCG Supply • Agency • Storage • Distribution 
- 
-</div> 
- 
-</div> 
- 
-<div class="owner"> 
- 
-<span 
-data-en="Owner" 
-data-hi="मालिक"> 
- 
-Owner 
- 
-</span> 
- 
-<strong> 
-Ashish Maurya 
-</strong> 
- 
-</div> 
- 
-</div> 
- 
-<div class="copyright"> 
- 
-<span> 
-© 2026 Yash Enterprises 
-</span> 
- 
-<span 
-data-en="All Rights Reserved." 
-data-hi="सर्वाधिकार सुरक्षित।"> 
- 
-All Rights Reserved. 
- 
-</span> 
- 
-</div> 
- 
-</footer> 
- 
-<script> 
- 
-const mobileButton = 
-document.getElementById("mobileButton"); 
- 
-const mobileMenu = 
-document.getElementById("mobileMenu"); 
- 
-mobileButton.addEventListener( 
-"click", 
-function() { 
- 
-mobileMenu.classList.toggle("show"); 
- 
-if ( 
-mobileMenu.classList.contains("show") 
-) { 
- 
-mobileButton.textContent = "✕"; 
- 
-} else { 
- 
-mobileButton.textContent = "☰"; 
- 
-} 
- 
-}); 
- 
-let language = 
-localStorage.getItem("yashLanguage") || "en"; 
- 
-function updateLanguage() { 
- 
-document 
-.querySelectorAll("[data-en]") 
-.forEach(function(element) { 
- 
-const text = 
-element.getAttribute( 
-"data-" + language 
-); 
- 
-if (text) { 
- 
-element.textContent = text; 
- 
-} 
- 
-}); 
- 
-document.getElementById( 
-"languageText" 
-).textContent = 
-language === "en" 
-? "हिन्दी" 
-: "English"; 
- 
-document.documentElement.lang = 
-language; 
- 
-} 
- 
-document.getElementById( 
-"languageButton" 
-).addEventListener( 
-"click", 
-function() { 
- 
-language = 
-language === "en" 
-? "hi" 
-: "en"; 
- 
-localStorage.setItem( 
-"yashLanguage", 
-language 
-); 
- 
-updateLanguage(); 
- 
-}); 
- 
-updateLanguage(); 
- 
-</script> 
- 
-</body> 
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="Yash Enterprises - Products supplied including Campa beverages, Lahori Zeera, Independence, Bro Bond and groceries.">
+
+<!-- FAVICON -->
+<link rel="icon" type="image/jpeg" href="logo.jpeg">
+
+<title>Products | Yash Enterprises</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --blue: #123d8c;
+    --dark-blue: #092b68;
+    --red: #e3262e;
+    --light-blue: #edf3ff;
+    --dark: #172033;
+    --gray: #687386;
+    --white: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9fc;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid #e6e9ef;
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    height: 75px;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--blue);
+}
+
+.logo-symbol {
+    width: 45px;
+    height: 45px;
+    background: var(--red);
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 900;
+    box-shadow: 0 5px 15px rgba(227,38,46,0.25);
+}
+
+.logo-name {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 1.1;
+}
+
+.logo-subtitle {
+    font-size: 9px;
+    color: #7b8594;
+    letter-spacing: 1px;
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.menu a {
+    color: #273140;
+    font-size: 14px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.menu a:hover {
+    color: var(--red);
+}
+
+.menu .products-link {
+    color: var(--red);
+}
+
+.menu .contact-link {
+    color: white;
+    background: var(--blue);
+    padding: 11px 18px;
+    border-radius: 7px;
+}
+
+.menu .contact-link:hover {
+    background: var(--red);
+    color: white;
+}
+
+.mobile-button {
+    display: none;
+    width: 43px;
+    height: 43px;
+    border: none;
+    border-radius: 8px;
+    background: var(--blue);
+    color: white;
+    font-size: 21px;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+    background: white;
+    border-top: 1px solid #e6e9ef;
+    padding: 8px 18px 15px;
+}
+
+.mobile-menu.show {
+    display: block;
+}
+
+.mobile-menu a {
+    display: block;
+    padding: 14px 8px;
+    border-bottom: 1px solid #eeeeee;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.mobile-menu a.active {
+    color: var(--red);
+}
+
+.language-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 3000;
+    border: 3px solid white;
+    background: var(--red);
+    color: white;
+    min-width: 125px;
+    padding: 13px 18px;
+    border-radius: 35px;
+    font-size: 15px;
+    font-weight: 900;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    transition: 0.2s;
+}
+
+.language-button:hover {
+    transform: scale(1.05);
+}
+
+.hero {
+    padding: 150px 20px 90px;
+    background: radial-gradient(circle at 85% 20%, #dfe9ff 0, #f7f9fc 35%, #ffffff 70%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #edf2ff;
+    left: -150px;
+    top: 100px;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.badge {
+    display: inline-block;
+    background: #ffecef;
+    color: var(--red);
+    padding: 8px 14px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .5px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: var(--blue);
+    font-size: clamp(40px, 7vw, 65px);
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--gray);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.category-bar {
+    background: white;
+    border-top: 1px solid #e8ebef;
+    border-bottom: 1px solid #e8ebef;
+    padding: 15px 20px;
+    position: sticky;
+    top: 75px;
+    z-index: 500;
+}
+
+.category-inner {
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.category-inner a {
+    color: var(--blue);
+    background: #f1f5fc;
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: .2s;
+}
+
+.category-inner a:hover {
+    background: var(--blue);
+    color: white;
+}
+
+.products-section {
+    padding: 80px 20px;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title small {
+    color: var(--red);
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.section-title h2 {
+    color: var(--blue);
+    font-size: clamp(30px, 5vw, 42px);
+    margin: 10px 0;
+}
+
+.section-title p {
+    color: var(--gray);
+    line-height: 1.7;
+}
+
+.product-category {
+    margin-bottom: 70px;
+}
+
+.category-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.category-heading h2 {
+    color: var(--blue);
+    font-size: 27px;
+}
+
+.category-line {
+    height: 2px;
+    flex: 1;
+    background: #e2e7ef;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    border: 1px solid #e3e7ed;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: .25s;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.09);
+}
+
+.product-image {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    background: #eef3fa;
+}
+
+.product-content {
+    padding: 19px;
+}
+
+.product-content h3 {
+    color: var(--blue);
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.product-content p {
+    color: var(--gray);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.no-image {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #edf3ff, #ffffff);
+    font-size: 50px;
+}
+
+.info-box {
+    margin-top: 30px;
+    padding: 25px;
+    background: var(--light-blue);
+    border-left: 4px solid var(--blue);
+    border-radius: 10px;
+}
+
+.info-box strong {
+    display: block;
+    color: var(--blue);
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.info-box p {
+    color: var(--gray);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.cta {
+    padding: 70px 20px;
+    background: #f0f3f8;
+}
+
+.cta-box {
+    max-width: 1050px;
+    margin: auto;
+    background: white;
+    padding: 40px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+}
+
+.cta-box h2 {
+    color: var(--blue);
+    font-size: 30px;
+    margin-bottom: 9px;
+}
+
+.cta-box p {
+    color: var(--gray);
+    font-size: 14px;
+}
+
+.primary-button {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    padding: 14px 21px;
+    border-radius: 8px;
+    font-weight: 900;
+    font-size: 14px;
+    transition: .2s;
+}
+
+.primary-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(227,38,46,0.22);
+}
+
+footer {
+    background: #071f4c;
+    color: white;
+    padding: 35px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-name {
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 7px;
+}
+
+.footer-description {
+    color: #94a7c7;
+    font-size: 11px;
+}
+
+.owner {
+    text-align: right;
+    color: #94a7c7;
+    font-size: 11px;
+}
+
+.owner strong {
+    display: block;
+    color: white;
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.copyright {
+    max-width: 1100px;
+    margin: 18px auto 0;
+    display: flex;
+    justify-content: space-between;
+    color: #7187aa;
+    font-size: 10px;
+}
+
+@media (max-width: 900px) {
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cta-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .navbar {
+        height: 68px;
+        padding: 0 15px;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .mobile-button {
+        display: block;
+    }
+
+    .hero {
+        padding: 120px 16px 65px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .category-bar {
+        top: 68px;
+        padding: 12px 10px;
+    }
+
+    .category-inner {
+        gap: 6px;
+    }
+
+    .category-inner a {
+        padding: 8px 11px;
+        font-size: 10px;
+    }
+
+    .products-section {
+        padding: 65px 16px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .category-heading h2 {
+        font-size: 23px;
+    }
+
+    .product-image {
+        height: 220px;
+    }
+
+    .cta {
+        padding: 45px 16px;
+    }
+
+    .cta-box {
+        padding: 30px 20px;
+    }
+
+    .cta-box h2 {
+        font-size: 27px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+    }
+
+    .owner {
+        text-align: left;
+    }
+
+    .copyright {
+        flex-direction: column;
+        gap: 7px;
+    }
+
+    .language-button {
+        right: 13px;
+        bottom: 13px;
+        min-width: 120px;
+        padding: 12px 15px;
+    }
+
+}
+
+@media (max-width: 380px) {
+
+    .logo-name {
+        font-size: 17px;
+    }
+
+    .logo-subtitle {
+        font-size: 7px;
+    }
+
+    .logo-symbol {
+        width: 39px;
+        height: 39px;
+    }
+
+    .hero h1 {
+        font-size: 37px;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<a href="index.html" class="logo">
+
+<div class="logo-symbol">
+Y
+</div>
+
+<div>
+
+<div class="logo-name">
+Yash Enterprises
+</div>
+
+<div class="logo-subtitle">
+FMCG • SUPPLY • DISTRIBUTION
+</div>
+
+</div>
+
+</a>
+
+<nav class="menu">
+
+<a href="index.html"
+data-en="Home"
+data-hi="होम">
+Home
+</a>
+
+<a href="products.html"
+class="products-link"
+data-en="Products"
+data-hi="उत्पाद">
+Products
+</a>
+
+<a href="contact.html"
+class="contact-link"
+data-en="Contact Us"
+data-hi="संपर्क करें">
+Contact Us
+</a>
+
+</nav>
+
+<button
+class="mobile-button"
+id="mobileButton">
+
+☰
+
+</button>
+
+</div>
+
+<div class="mobile-menu" id="mobileMenu">
+
+<a href="index.html"
+data-en="Home"
+data-hi="होम">
+Home
+</a>
+
+<a href="products.html"
+class="active"
+data-en="Products"
+data-hi="उत्पाद">
+Products
+</a>
+
+<a href="contact.html"
+data-en="Contact Us"
+data-hi="संपर्क करें">
+Contact Us
+</a>
+
+</div>
+
+</header>
+
+<button
+class="language-button"
+id="languageButton">
+
+🌐
+
+<span id="languageText">
+हिन्दी
+</span>
+
+</button>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="badge"
+data-en="OUR PRODUCT RANGE"
+data-hi="हमारे उत्पाद">
+
+OUR PRODUCT RANGE
+
+</div>
+
+<h1>
+
+<span
+data-en="Products"
+data-hi="उत्पाद">
+
+Products
+
+</span>
+
+<span
+data-en="we supply."
+data-hi="हम सप्लाई करते हैं।">
+
+we supply.
+
+</span>
+
+</h1>
+
+<p
+data-en="Explore the beverage and consumer product categories handled by Yash Enterprises."
+data-hi="यश एंटरप्राइजेज द्वारा संभाली जाने वाली पेय पदार्थ और उपभोक्ता उत्पाद श्रेणियां देखें।">
+
+Explore the beverage and consumer product
+categories handled by Yash Enterprises.
+
+</p>
+
+</div>
+
+</section>
+
+<div class="category-bar">
+
+<div class="category-inner">
+
+<a href="#campa"
+data-en="Campa"
+data-hi="कैम्पा">
+Campa
+</a>
+
+<a href="#lahori"
+data-en="Lahori"
+data-hi="लाहौरी">
+Lahori
+</a>
+
+<a href="#independence"
+data-en="Independence"
+data-hi="इंडिपेंडेंस">
+Independence
+</a>
+
+<a href="#brobond"
+data-en="Bro Bond"
+data-hi="ब्रो बॉन्ड">
+Bro Bond
+</a>
+
+<a href="#groceries"
+data-en="Groceries"
+data-hi="किराना">
+Groceries
+</a>
+
+</div>
+
+</div>
+
+<section class="products-section">
+
+<div class="container">
+
+<div class="section-title">
+
+<small
+data-en="PRODUCT CATEGORIES"
+data-hi="उत्पाद श्रेणियां">
+
+PRODUCT CATEGORIES
+
+</small>
+
+<h2
+data-en="What we handle"
+data-hi="हम क्या संभालते हैं">
+
+What we handle
+
+</h2>
+
+<p
+data-en="Our current product categories include beverages, selected consumer products and groceries."
+data-hi="हमारी वर्तमान उत्पाद श्रेणियों में पेय पदार्थ, चुनिंदा उपभोक्ता उत्पाद और किराना शामिल हैं।">
+
+Our current product categories include
+beverages, selected consumer products and groceries.
+
+</p>
+
+</div>
+
+<div class="product-category" id="campa">
+
+<div class="category-heading">
+
+<h2
+data-en="Campa Beverages"
+data-hi="कैम्पा पेय पदार्थ">
+
+Campa Beverages
+
+</h2>
+
+<div class="category-line"></div>
+
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="cola.png"
+alt="Campa Cola">
+
+<div class="product-content">
+
+<h3>
+Campa Cola
+</h3>
+
+<p
+data-en="Campa Cola beverage."
+data-hi="कैम्पा कोला पेय।">
+
+Campa Cola beverage.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="orange.png"
+alt="Campa Orange">
+
+<div class="product-content">
+
+<h3>
+Campa Orange
+</h3>
+
+<p
+data-en="Campa Orange beverage."
+data-hi="कैम्पा ऑरेंज पेय।">
+
+Campa Orange beverage.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="lemon.png"
+alt="Campa Lemon">
+
+<div class="product-content">
+
+<h3>
+Campa Lemon
+</h3>
+
+<p
+data-en="Campa Lemon beverage."
+data-hi="कैम्पा लेमन पेय।">
+
+Campa Lemon beverage.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="energy.png"
+alt="Campa PowerUp">
+
+<div class="product-content">
+
+<h3>
+Campa Energy
+</h3>
+
+<p
+data-en="Campa PowerUp beverage."
+data-hi="कैम्पा Energy पेय।">
+
+Campa Energy beverage.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product-category" id="lahori">
+
+<div class="category-heading">
+
+<h2
+data-en="Lahori"
+data-hi="लाहौरी">
+
+Lahori
+
+</h2>
+
+<div class="category-line"></div>
+
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="lahori.png"
+alt="Lahori Zeera">
+
+<div class="product-content">
+
+<h3>
+Lahori Zeera
+</h3>
+
+<p
+data-en="Lahori Zeera beverage."
+data-hi="लाहौरी जीरा पेय।">
+
+Lahori Zeera beverage.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product-category" id="independence">
+
+<div class="category-heading">
+
+<h2
+data-en="Independence"
+data-hi="इंडिपेंडेंस">
+
+Independence
+
+</h2>
+
+<div class="category-line"></div>
+
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="independence.png"
+alt="Independence products">
+
+<div class="product-content">
+
+<h3>
+Independence
+</h3>
+
+<p
+data-en="Selected Independence consumer products."
+data-hi="चुनिंदा इंडिपेंडेंस उपभोक्ता उत्पाद।">
+
+Selected Independence consumer products.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product-category" id="brobond">
+
+<div class="category-heading">
+
+<h2
+data-en="Bro Bond"
+data-hi="ब्रो बॉन्ड">
+
+Bro Bond
+
+</h2>
+
+<div class="category-line"></div>
+
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="Brobond.jpg"
+alt="Bro Bond drinks">
+
+<div class="product-content">
+
+<h3>
+Bro Bond Drinks
+</h3>
+
+<p
+data-en="Bro Bond drinks and beverage products."
+data-hi="ब्रो बॉन्ड ड्रिंक्स और पेय उत्पाद।">
+
+Bro Bond drinks and beverage products.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="product-category" id="groceries">
+
+<div class="category-heading">
+
+<h2
+data-en="Groceries & More"
+data-hi="किराना और अन्य">
+
+Groceries & More
+
+</h2>
+
+<div class="category-line"></div>
+
+</div>
+
+<div class="product-grid">
+
+<div class="product-card">
+
+<img
+class="product-image"
+src="grocery.png"
+alt="Groceries">
+
+<div class="product-content">
+
+<h3
+data-en="Groceries"
+data-hi="किराना">
+
+Groceries
+
+</h3>
+
+<p
+data-en="Grocery and everyday consumer products."
+data-hi="किराना और रोज़मर्रा के उपभोक्ता उत्पाद।">
+
+Grocery and everyday consumer products.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="info-box">
+
+<strong
+data-en="Looking for a specific product?"
+data-hi="किसी विशेष उत्पाद की आवश्यकता है?">
+
+Looking for a specific product?
+
+</strong>
+
+<p
+data-en="Contact Yash Enterprises to ask about product availability and supply."
+data-hi="उत्पाद की उपलब्धता और सप्लाई के बारे में जानने के लिए यश एंटरप्राइजेज से संपर्क करें।">
+
+Contact Yash Enterprises to ask about product
+availability and supply.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="cta">
+
+<div class="cta-box">
+
+<div>
+
+<h2
+data-en="Need these products?"
+data-hi="इन उत्पादों की आवश्यकता है?">
+
+Need these products?
+
+</h2>
+
+<p
+data-en="Contact Yash Enterprises for product availability and supply enquiries."
+data-hi="उत्पाद की उपलब्धता और सप्लाई के लिए यश एंटरप्राइजेज से संपर्क करें।">
+
+Contact Yash Enterprises for product availability
+and supply enquiries.
+
+</p>
+
+</div>
+
+<a href="contact.html"
+class="primary-button"
+data-en="Contact Us →"
+data-hi="संपर्क करें →">
+
+Contact Us →
+
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<div class="footer-name">
+Yash Enterprises
+</div>
+
+<div class="footer-description"
+data-en="FMCG Supply • Agency • Storage • Distribution"
+data-hi="एफएमसीजी सप्लाई • एजेंसी • स्टोरेज • डिस्ट्रीब्यूशन">
+
+FMCG Supply • Agency • Storage • Distribution
+
+</div>
+
+</div>
+
+<div class="owner">
+
+<span
+data-en="Owner"
+data-hi="मालिक">
+
+Owner
+
+</span>
+
+<strong>
+Ashish Maurya
+</strong>
+
+</div>
+
+</div>
+
+<div class="copyright">
+
+<span>
+© 2026 Yash Enterprises
+</span>
+
+<span
+data-en="All Rights Reserved."
+data-hi="सर्वाधिकार सुरक्षित।">
+
+All Rights Reserved.
+
+</span>
+
+</div>
+
+</footer>
+
+<script>
+
+const mobileButton =
+document.getElementById("mobileButton");
+
+const mobileMenu =
+document.getElementById("mobileMenu");
+
+mobileButton.addEventListener(
+"click",
+function() {
+
+mobileMenu.classList.toggle("show");
+
+if (
+mobileMenu.classList.contains("show")
+) {
+
+mobileButton.textContent = "✕";
+
+} else {
+
+mobileButton.textContent = "☰";
+
+}
+
+});
+
+let language =
+localStorage.getItem("yashLanguage") || "en";
+
+function updateLanguage() {
+
+document
+.querySelectorAll("[data-en]")
+.forEach(function(element) {
+
+const text =
+element.getAttribute(
+"data-" + language
+);
+
+if (text) {
+
+element.textContent = text;
+
+}
+
+});
+
+document.getElementById(
+"languageText"
+).textContent =
+language === "en"
+? "हिन्दी"
+: "English";
+
+document.documentElement.lang =
+language;
+
+}
+
+document.getElementById(
+"languageButton"
+).addEventListener(
+"click",
+function() {
+
+language =
+language === "en"
+? "hi"
+: "en";
+
+localStorage.setItem(
+"yashLanguage",
+language
+);
+
+updateLanguage();
+
+});
+
+updateLanguage();
+
+</script>
+
+</body>
+
 </html>
-
-
 
