@@ -50,6 +50,8 @@ a {
     text-decoration: none;
 }
 
+/* HEADER */
+
 header {
     position: fixed;
     top: 0;
@@ -70,6 +72,8 @@ header {
     justify-content: space-between;
 }
 
+/* LOGO */
+
 .logo {
     display: flex;
     align-items: center;
@@ -80,15 +84,21 @@ header {
 .logo-symbol {
     width: 45px;
     height: 45px;
-    background: var(--red);
-    color: white;
     border-radius: 10px;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 25px;
-    font-weight: 900;
+    background: white;
     box-shadow: 0 5px 15px rgba(227,38,46,0.25);
+    flex-shrink: 0;
+}
+
+.logo-symbol img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .logo-name {
@@ -104,6 +114,8 @@ header {
     font-weight: bold;
     margin-top: 3px;
 }
+
+/* DESKTOP MENU */
 
 .menu {
     display: flex;
@@ -137,6 +149,8 @@ header {
     background: var(--red);
     color: white;
 }
+
+/* MOBILE MENU BUTTON */
 
 .mobile-button {
     display: none;
@@ -174,6 +188,8 @@ header {
     color: var(--red);
 }
 
+/* LANGUAGE BUTTON */
+
 .language-button {
     position: fixed;
     right: 20px;
@@ -200,9 +216,16 @@ header {
     transform: scale(1.05);
 }
 
+/* HERO */
+
 .hero {
     padding: 150px 20px 90px;
-    background: radial-gradient(circle at 85% 20%, #dfe9ff 0, #f7f9fc 35%, #ffffff 70%);
+    background: radial-gradient(
+        circle at 85% 20%,
+        #dfe9ff 0,
+        #f7f9fc 35%,
+        #ffffff 70%
+    );
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -258,6 +281,8 @@ header {
     line-height: 1.8;
 }
 
+/* CATEGORY BAR */
+
 .category-bar {
     background: white;
     border-top: 1px solid #e8ebef;
@@ -291,6 +316,8 @@ header {
     background: var(--blue);
     color: white;
 }
+
+/* PRODUCTS */
 
 .products-section {
     padding: 80px 20px;
@@ -370,6 +397,7 @@ header {
     height: 210px;
     object-fit: cover;
     background: #eef3fa;
+    display: block;
 }
 
 .product-content {
@@ -397,6 +425,8 @@ header {
     font-size: 50px;
 }
 
+/* INFO BOX */
+
 .info-box {
     margin-top: 30px;
     padding: 25px;
@@ -417,6 +447,8 @@ header {
     font-size: 13px;
     line-height: 1.7;
 }
+
+/* CTA */
 
 .cta {
     padding: 70px 20px;
@@ -462,6 +494,8 @@ header {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(227,38,46,0.22);
 }
+
+/* FOOTER */
 
 footer {
     background: #071f4c;
@@ -512,6 +546,8 @@ footer {
     font-size: 10px;
 }
 
+/* TABLET */
+
 @media (max-width: 900px) {
 
     .product-grid {
@@ -524,6 +560,8 @@ footer {
     }
 
 }
+
+/* MOBILE */
 
 @media (max-width: 700px) {
 
@@ -616,6 +654,8 @@ footer {
 
 }
 
+/* SMALL MOBILE */
+
 @media (max-width: 380px) {
 
     .logo-name {
@@ -643,14 +683,17 @@ footer {
 
 <body>
 
+<!-- HEADER -->
+
 <header>
 
 <div class="navbar">
 
 <a href="index.html" class="logo">
 
+<!-- LOGO IMAGE -->
 <div class="logo-symbol">
-<img src="logo.jpeg">
+    <img src="logo.jpeg" alt="Yash Enterprises Logo">
 </div>
 
 <div>
@@ -726,6 +769,8 @@ Contact Us
 
 </header>
 
+<!-- LANGUAGE BUTTON -->
+
 <button
 class="language-button"
 id="languageButton">
@@ -737,6 +782,8 @@ id="languageButton">
 </span>
 
 </button>
+
+<!-- HERO -->
 
 <section class="hero">
 
@@ -783,6 +830,8 @@ categories handled by Yash Enterprises.
 
 </section>
 
+<!-- CATEGORY BAR -->
+
 <div class="category-bar">
 
 <div class="category-inner">
@@ -821,6 +870,8 @@ Groceries
 
 </div>
 
+<!-- PRODUCTS -->
+
 <section class="products-section">
 
 <div class="container">
@@ -853,6 +904,8 @@ beverages, selected consumer products and groceries.
 </p>
 
 </div>
+
+<!-- CAMPA -->
 
 <div class="product-category" id="campa">
 
@@ -952,7 +1005,7 @@ Campa Lemon beverage.
 <img
 class="product-image"
 src="energy.png"
-alt="Campa PowerUp">
+alt="Campa Energy">
 
 <div class="product-content">
 
@@ -975,6 +1028,8 @@ Campa Energy beverage.
 </div>
 
 </div>
+
+<!-- LAHORI -->
 
 <div class="product-category" id="lahori">
 
@@ -1023,6 +1078,8 @@ Lahori Zeera beverage.
 
 </div>
 
+<!-- INDEPENDENCE -->
+
 <div class="product-category" id="independence">
 
 <div class="category-heading">
@@ -1070,6 +1127,8 @@ Selected Independence consumer products.
 
 </div>
 
+<!-- BRO BOND -->
+
 <div class="product-category" id="brobond">
 
 <div class="category-heading">
@@ -1116,6 +1175,8 @@ Bro Bond drinks and beverage products.
 </div>
 
 </div>
+
+<!-- GROCERIES -->
 
 <div class="product-category" id="groceries">
 
@@ -1168,6 +1229,8 @@ Grocery and everyday consumer products.
 
 </div>
 
+<!-- INFO -->
+
 <div class="info-box">
 
 <strong
@@ -1192,6 +1255,8 @@ availability and supply.
 </div>
 
 </section>
+
+<!-- CTA -->
 
 <section class="cta">
 
@@ -1230,6 +1295,8 @@ Contact Us →
 </div>
 
 </section>
+
+<!-- FOOTER -->
 
 <footer>
 
@@ -1286,6 +1353,8 @@ All Rights Reserved.
 </div>
 
 </footer>
+
+<!-- JAVASCRIPT -->
 
 <script>
 
